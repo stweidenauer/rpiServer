@@ -1,5 +1,7 @@
 from flask import Flask, render_template
+import os
 
+path = os.path.join('static', 'pictures')
 app = Flask(__name__)
 
 
@@ -10,7 +12,7 @@ def index():
 
 @app.route('/camera')
 def camera():
-    pictures = ['Bild1', 'Bild2']
+    pictures = path = os.path.join('static', 'pictures', 'Bild.jpg')
     return render_template('camera.html', pictures=pictures)
 
 
