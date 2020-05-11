@@ -12,7 +12,11 @@ def index():
 
 @app.route('/camera')
 def camera():
-    pictures = path = os.path.join('static', 'pictures', 'Bild.jpg')
+    pictures = []
+    print(os.getcwd())
+    for picture in os.listdir(path):
+        pictures.append(os.path.join(path, picture))
+    print(pictures)
     return render_template('camera.html', pictures=pictures)
 
 
