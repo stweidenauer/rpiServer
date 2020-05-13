@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RaspiFlaskServer</title>
+    <link rel="stylesheet" href="static/skeleton/normalize.css">
+    <link rel="stylesheet" href="static/skeleton/skeleton.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <ul class="navigation">
+            <li class="navigation-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="navigation-item">
+                <a href="/camera">Kamera</a>
+            </li>
+        </ul>
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os
 
-path = os.path.join('static', 'pictures')
+path_to_pictures = os.path.join('static', 'pictures')
 app = Flask(__name__)
 
 
@@ -13,10 +13,11 @@ def index():
 @app.route('/camera')
 def camera():
     pictures = []
-    print(os.getcwd())
-    for picture in os.listdir(path):
-        pictures.append(os.path.join(path, picture))
-    print(pictures)
+    # path ist cwd
+    # erstellt eine Liste aller Pfadangaben,
+    # aller Bilder im Verzeichnis /static/pictures
+    for picture in os.listdir(path_to_pictures):
+        pictures.append(os.path.join(path_to_pictures, picture))
     return render_template('camera.html', pictures=pictures)
 
 

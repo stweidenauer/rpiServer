@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pictures of the last two days</title>
-</head>
-<body>
+{% extends "layouts/main.html" %}
+
+{% block content %}
 {% for picture in pictures %}
-    <img src="{{picture}}" width="200" height="200">
+<img src="{{picture}}" width="200" height="200">
 {% endfor %}}
-</body>
-</html>
+{% endblock %}
