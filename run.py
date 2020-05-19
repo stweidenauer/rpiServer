@@ -1,5 +1,6 @@
-from flask import Flask, render_template
 import os
+
+from flask import Flask, render_template
 
 path_to_pictures = os.path.join('static', 'pictures')
 app = Flask(__name__)
@@ -19,6 +20,11 @@ def camera():
     for picture in os.listdir(path_to_pictures):
         pictures.append(os.path.join(path_to_pictures, picture))
     return render_template('camera.html', pictures=pictures)
+
+
+@app.route('/LH-Wiki')
+def lhwiki():
+    return render_template('lhwiki.html')
 
 
 if __name__ == '__main__':
